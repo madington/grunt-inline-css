@@ -42,6 +42,8 @@ module.exports = function(grunt) {
           return grunt.log.error(err);
         }
 
+        // replace relative path
+        html = html.replace(/[.]{2}\//g,'');
         grunt.file.write(f.dest, html);
         grunt.log.writeln('File "' + f.dest + '" created.');
 
